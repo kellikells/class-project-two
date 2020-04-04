@@ -21,6 +21,12 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/signup", function(req, res) {
+    //db.Example.findAll({}).then(function(dbExamples) {
+    res.render("signup", {});
+    //  });
+  });
+
   //signin
   app.get("/signin", function(req, res) {
     //db.Example.findAll({}).then(function(dbExamples) {
