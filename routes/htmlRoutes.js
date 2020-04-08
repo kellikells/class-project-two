@@ -22,16 +22,23 @@ module.exports = function(app) {
     });
   });
   app.get("/signup", function(req, res) {
-    //db.Example.findAll({}).then(function(dbExamples) {
     res.render("signup", {});
-    //  });
   });
 
   //signin
   app.get("/signin", function(req, res) {
-    //db.Example.findAll({}).then(function(dbExamples) {
     res.render("signin", {});
-    //  });
+  });
+
+  app.get("/service", function(req, res) {
+    res.render("service", {});
+  });
+
+  app.get("/services", function(req, res) {
+    db.Service.findAll({}).then(function(data) {
+      console.log(data);
+      res.render("services", { services: data });
+    });
   });
 
   // Render 404 page for any unmatched routes

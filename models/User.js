@@ -42,5 +42,13 @@ module.exports = (sequelize, DataTypes) => {
     user.password = "";
   });
 
+  User.associate = function(models) {
+    // Associating seler with items
+    // When an seler is deleted, also delete any associated items
+    User.hasMany(models.Service, {
+      onDelete: "cascade"
+    });
+  };
+
   return User;
 };
