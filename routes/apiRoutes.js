@@ -30,4 +30,12 @@ module.exports = function(app) {
       res.json(data);
     });
   });
+
+  app.post("/api/newservice", function(req, res) {
+    console.log(req.body);
+
+    db.Service.create(req.body).then(function(data) {
+      res.json(data);
+    });
+  });
 };
