@@ -1,10 +1,8 @@
 var db = require("../models");
-const bcrypt = require("bcrypt");
-const jwt = require("jwt-simple");
 
 module.exports = function(app) {
   // Load index page
-  /*  app.get("/", function(req, res) {
+  app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
@@ -23,11 +21,6 @@ module.exports = function(app) {
       });
     });
   });
-  */
-  app.get("/", function(req, res) {
-    res.render("index", {});
-  });
-
   app.get("/signup", function(req, res) {
     res.render("signup", {});
   });
@@ -43,11 +36,8 @@ module.exports = function(app) {
 
   app.get("/services", function(req, res) {
     db.Service.findAll({}).then(function(data) {
-      const hbData = data.map(function(data) {
-        return data.dataValues;
-      });
-      // res.json(dbData);
-      res.render("services", { services: hbData });
+      console.log(data);
+      res.render("services", { services: data });
     });
   });
 
