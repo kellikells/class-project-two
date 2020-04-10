@@ -1,4 +1,4 @@
-//const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
@@ -33,15 +33,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  // Before user saves to database, hash password
-  User.beforeCreate(user => {
-    // const salt = await bcrypt.genSalt(10);
-
-    // const hashedPassword = await bcrypt.hash(user.password, salt);
-
-    user.password = "";
-  });
-
   User.associate = function(models) {
     // Associating seler with items
     // When an seler is deleted, also delete any associated items
@@ -49,6 +40,13 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "cascade"
     });
   };
+
+  User.beforeCreate(async (user) => {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(user.password, salt);
+    user.password = hashedPassword;
+  });
+
 
   return User;
 };

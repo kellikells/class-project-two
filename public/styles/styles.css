@@ -1,3 +1,45 @@
 .list-group-item {
   line-height: 2.5;
 }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+    
+.page-footer{
+position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.container{
+  padding: 20px 0px;
+}
+
+nav{
+  background-color: #ffffff;
+  color:#333;
+  padding: 0px 50px;
+}
+
+nav ul a{
+  color:#333;
+}
+
+.page-footer{
+  background-color: #ffffff;
+  columns: #333333;
+}
+
+.page-footer .footer-copyright{
+  color: #333333;
+}
+
+nav .brand-logo{
+  color: #333333;
+}
