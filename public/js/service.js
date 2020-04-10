@@ -24,7 +24,7 @@ const handleFormSubmit = function(event) {
     title: $title.val().trim(),
     description: $description.val().trim(),
     price: $price.val().trim(),
-    UserId: $user.val().trim()
+    UserId: localStorage.getItem("userId")
   };
 
   if (!(newService.title && newService.description && newService.price)) {
