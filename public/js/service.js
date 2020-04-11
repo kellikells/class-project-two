@@ -2,7 +2,6 @@ let $submitBtn = $("#submitService");
 let $title = $("#title");
 let $description = $("#description");
 let $price = $("#price");
-let $user = $("#user");
 
 var API = {
   saveService: function(newService) {
@@ -24,7 +23,7 @@ const handleFormSubmit = function(event) {
     title: $title.val().trim(),
     description: $description.val().trim(),
     price: $price.val().trim(),
-    UserId: localStorage.getItem("userId")
+    UserId: JSON.parse(localStorage.getItem("user")).id
   };
 
   if (!(newService.title && newService.description && newService.price)) {
@@ -32,7 +31,7 @@ const handleFormSubmit = function(event) {
     return;
   }
   API.saveService(newService).then(function() {
-    console.log("new service saved");
+    console.log("new service saved", UserId);
   });
 };
 

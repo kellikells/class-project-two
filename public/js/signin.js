@@ -27,7 +27,7 @@ const handleSigninProcess = function() {
   }
   API.signIn(userCredentials).then(function(data) {
     console.log(data);
-    localStorage.setItem("userId", data);
+    localStorage.setItem("user", JSON.stringify(data));
   });
 };
 $(document).ready(function() {
