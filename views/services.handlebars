@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="servicesPage">
     <div class="row">
         {{#each services}}
         <div class="col s12 m7">
@@ -7,12 +7,23 @@
                 <div class="card-image">
                 </div>
                 <div class="card-stacked">
-                    <div class="card-content">
+                    <div class="card-content serviceBox" data-userid="{{UserId}}" data-serviceid="{{id}}">
+                        <i class="material-icons editService" style="display: none;"><a href="">edit</a></i>
                         <p>{{description}}</p>
                         <p>{{price}}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">Full Project</a>
+                        {{!-- add current bids bellow --}}
+                        <p>Current Bids: </p>
+                        <button id="bidBtn" type="button"> Place your bid!</button>
+                        <script> 
+                           /* $("#bidBtn").on("click", function(){
+                                $.get("/api/services/:id", function(data){
+
+                                })
+                            }*/
+                        </script>
+                        {{!-- <a href="#">Make a Bid!</a> --}}
                     </div>
                 </div>
             </div>
@@ -20,3 +31,4 @@
         {{/each}}
     </div>
 </div>
+<script src="/js/services.js"></script>

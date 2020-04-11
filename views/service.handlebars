@@ -1,5 +1,5 @@
-<div class="container">
-      {{#unless id}}
+<label class="container">
+
     <div class="row">
         <form class="col s12">
             <div class="row">
@@ -23,31 +23,6 @@
             <button class="btn waves-effect waves-light" type="submit" name="action" id="submitService">Submit Service</button>
         </form>
     </div>
-     {{/unless}}
-  {{#if id}}
-   <div class="row">
-        <form class="col s12">
-            <div class="row">
-                     <div class="input-field col s12">
-                    <input id="title" type="text" class="validate" value="{{title}}">
-                    <label for="title">Title</label>
-                </div>
-            </div>
-             <div class="row">
-                <div class="input-field col s12">
-                    <textarea class="materialize-textarea" id="description" class="validate" >{{description}}</textarea>
-                    <label for="description">description</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="price" type="text" class="validate" value="{{price}}">
-                    <label for="price">Price</label>
-                </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action" id="updateService">update Service</button>
-        </form>
-    </div>
-      {{/if}}
-</div>
+
+</label>
 <script src="/js/service.js"></script>

@@ -1,4 +1,35 @@
 <div class="container">
+
+  <div class="row">
+    <div class="col s12">
+    <div class="card">
+      <div class="card-action teal light-green white-text" id="login">
+        <h5>Login</h5>
+      </div>
+      <div class="catd-content">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button class="waves-effect waves-light btn modal-trigger" type="submit" name="action" id="signin"
+              href="#modal1">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--
     <div class="row">
         <div class="input-field col s12">
             <input id="email" type="email" class="validate">
@@ -11,19 +42,22 @@
             <label for="password">Password</label>
         </div>
     </div>
-  <button class="waves-effect waves-light btn modal-trigger" type="submit" name="action" id="signin" href="#modal1" >Submit</button>
-</div>
+ 
+  <button class="waves-effect waves-light btn modal-trigger" type="submit" name="action" id="signin"
+    href="#modal1">Submit</button>
+       -->
+
 <!-- Modal Structure -->
 <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Yay! you did it!</h4>
-      <p>You know your username and password, you can ask us anytime! </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Yay! you did it!</h4>
+    <p>You know your username and password, you can ask us anytime! </p>
   </div>
-  <!---->
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+<!---->
 
 <script src="/js/signin.js"></script>
