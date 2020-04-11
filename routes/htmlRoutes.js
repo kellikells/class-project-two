@@ -43,7 +43,6 @@ module.exports = function(app) {
       const hbData = data.map(function(data) {
         return data.dataValues;
       });
-      // res.json(dbData);
       res.render("services", { services: hbData });
     });
   });
