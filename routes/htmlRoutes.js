@@ -47,6 +47,7 @@ module.exports = function(app) {
     });
   });
 
+//added edit service
   app.get("/editservice/:serviceId", function(req, res) {
     if (req.params.serviceId) {
       // Display the JSON for ONLY that character.
