@@ -1,4 +1,10 @@
 // Get references to page elements
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+
+  $("#nav-mobile").append(JSON.parse(localStorage.getItem("user")).firstName);
+});
+/*
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
@@ -97,3 +103,4 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+*/

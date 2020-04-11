@@ -1,6 +1,6 @@
 var db = require("../models");
 const bcrypt = require("bcrypt");
-const jwt = require("jwt-simple");
+//const jwt = require("jwt-simple");
 
 module.exports = function(app) {
   // Get all examples
@@ -25,18 +25,19 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });*/
+  /*
   const checkJwt = (req, res, next) => {
     try {
       var decoded = jwt.decode(req.token, process.env.JWT_SECRET);
     } catch (error) {
       return next({
         status: 401,
-        message: "Unauthorized",
+        message: "Unauthorized"
       });
     }
     req.user = decoded;
     next();
-  };
+  };*/
   // Create a new user api/newuser
   app.post("/api/newuser", function(req, res, next) {
     db.User.create(req.body)
@@ -91,10 +92,12 @@ module.exports = function(app) {
         }
 
         // If match, generate JWT
-         return res.json(user.id);
-        // return res.send({
-         // token: jwt.encode({ userId: user.id }, process.env.JWT_SECRET)
-        //});
+        return res.json(user);
+        //return res.send({
+        /* token: jwt.encode(
+            { userId: user.id },
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQHRlc3QuY29tIiwicGFzc3dvcmQiOiJhZG1pbiJ9.flou7bD7EGalOMFGDnJ8i21cSRbZYai_oqoUCauxCZo")
+        });*/
       });
     });
   });
