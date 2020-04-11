@@ -28,6 +28,14 @@ const handleSigninProcess = function() {
   API.signIn(userCredentials).then(function(data) {
     console.log(data);
     localStorage.setItem("user", JSON.stringify(data));
+    if (JSON.parse(localStorage.getItem("user")) !== null) {
+      let storedFirstName = JSON.parse(localStorage.getItem("user")).firstName;
+      $(".dropdown-trigger").html(
+        `Welcome ${storedFirstName} <i class="material-icons right">arrow_drop_down</i>`
+      );
+      $("#signupDrp a").text("Edit Profile");
+      $("#signinDrp").html("<a id='logout'>Logout</a>");
+    }
   });
 };
 $(document).ready(function() {

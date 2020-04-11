@@ -30,6 +30,7 @@ const handleFormSubmit = function(event) {
     alert("You must enter all required fields!");
     return;
   }
+
   API.saveService(newService).then(function() {
     console.log("new service saved", UserId);
   });

@@ -2,7 +2,17 @@
 $(document).ready(function() {
   $(".sidenav").sidenav();
 
-  $("#nav-mobile").append(JSON.parse(localStorage.getItem("user")).firstName);
+  if (JSON.parse(localStorage.getItem("user")) !== null) {
+    $("#signupDrp a").text("Edit Profile");
+    $("#signinDrp").html("<a id='logout'>Logout</a>");
+  }
+  $(".dropdown-trigger").dropdown();
+});
+
+$(document).on("click", "#logout", function() {
+  localStorage.removeItem("user");
+  $("#signupDrp a").text("Sign up");
+  $("#signinDrp").html("<a href='/signin'>Sign in</a>");
 });
 /*
 var $exampleText = $("#example-text");
