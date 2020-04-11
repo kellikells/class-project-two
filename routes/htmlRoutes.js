@@ -47,7 +47,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/service/:serviceId", function(req, res) {
+  app.get("/editservice/:serviceId", function(req, res) {
     if (req.params.serviceId) {
       // Display the JSON for ONLY that character.
       // (Note how we're using the ORM here to run our searches)
@@ -57,11 +57,7 @@ module.exports = function(app) {
         }
       }).then(function(data) {
         console.log(data.dataValues);
-        res.render("service", data.dataValues);
-      });
-    } else {
-      db.Service.findAll().then(function(result) {
-        return res.json(result);
+        res.render("editservice", data.dataValues);
       });
     }
   });

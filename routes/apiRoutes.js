@@ -3,6 +3,15 @@ const bcrypt = require("bcrypt");
 //const jwt = require("jwt-simple");
 
 module.exports = function(app) {
+  // route for GETTER to place a bid on a service
+/* app.post("/api/newservice/:id", function(req, res) {
+    db.Bid.findOne({
+      where: { id: req.params.id }
+    }).then(function(dbexampledb) {
+      res.json(dbexampledb);
+    });
+  });*/
+
   // Get all examples
   /*app.get("/api/examples", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {

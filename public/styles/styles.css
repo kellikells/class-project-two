@@ -51,3 +51,28 @@ nav .brand-logo{
 .brand-logo{
   margin-left: 70px;
 }
+
+.col .row{
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.editService{
+  position: absolute;
+  top:0px;
+  right:5px;
+  cursor: pointer;
+}
+
+.card-action {
+  height: 50px;
+}
+
+.card-action h5{
+  line-height: 0%;
+  margin-top: 5px;
+}
+
+.card-content{
+  padding-top: 20px;
+}

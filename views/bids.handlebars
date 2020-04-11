@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        {{!-- idk how to specify the service below --}}
+        {{$this.services}}
+        <div class="col s12 m7">
+            {{!-- not sure how to specify the title  --}}
+            <h4 class="header">{{$this.title}}</h4>
+            <div class="card horizontal">
+                <div class="card-image">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{description}}</p>
+                        <p>{{price}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Full Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
