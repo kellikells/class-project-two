@@ -4,36 +4,20 @@ const bcrypt = require("bcrypt");
 
 module.exports = function(app) {
   // route for GETTER to place a bid on a service
-/* app.post("/api/newservice/:id", function(req, res) {
-    db.Bid.findOne({
-      where: { id: req.params.id }
-    }).then(function(dbexampledb) {
-      res.json(dbexampledb);
-    });
-  });*/
 
-  // Get all examples
-  /*app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // PUT route for updating todos. We can get the updated todo data from req.body
+  app.put("/editservice", function(req, res) {
+    console.log(req.body);
+    db.Service.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbData) {
+      res.json(dbData);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });*/
   /*
   const checkJwt = (req, res, next) => {
     try {
