@@ -18,3 +18,41 @@ $(document).ready(function() {
     }
   });
 });
+
+let $submitBtn = $(".bidSubmit");
+
+var API = {
+  saveBid: function(newBid) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/newBid",
+      data: JSON.stringify(newBid)
+    });
+  }
+};
+
+$submitBtn.on("click", function(event) {
+  event.preventDefault();
+
+  var newBid = {
+    price: $(this)
+      .closest(".card-action")
+      .find(".bidInput")
+      .val()
+      .trim(),
+    ServiceId: $(this)
+      .closest(".card-action")
+      .find(".bidInput")
+      .data("serviceid")
+  };
+
+  console.log(newBid);
+
+  API.saveBid(newBid).then(function() {
+    console.log("new bid saved");
+    location.reload();
+  });
+});

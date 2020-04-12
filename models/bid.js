@@ -8,13 +8,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   Bid.associate = function(models) {
-    Bid.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-  Bid.associate = function(models) {
     Bid.belongsTo(models.Service, {
       foreignKey: {
         allowNull: false

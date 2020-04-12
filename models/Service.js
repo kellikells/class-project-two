@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
+
+    Service.hasMany(models.Bid, {
+      onDelete: "cascade"
+    });
   };
 
   return Service;

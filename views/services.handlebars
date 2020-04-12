@@ -1,7 +1,7 @@
 <div class="container" id="servicesPage">
     <div class="row">
         {{#each services}}
-        <div class="col s12 m7">
+        <div class="col s12 m10">
             <h4 class="header">{{title}}</h4>
             <div class="card horizontal">
                 <div class="card-image">
@@ -13,17 +13,10 @@
                         <p>{{price}}</p>
                     </div>
                     <div class="card-action">
-                        {{!-- add current bids bellow --}}
-                        Current Bids: 
-                        <button id="bidBtn" type="button"> Place your bid!</button>
-                        <script> 
-                           /* $("#bidBtn").on("click", function(){
-                                $.get("/api/services/:id", function(data){
-
-                                })
-                            }*/
-                        </script>
-                        {{!-- <a href="#">Make a Bid!</a> --}}
+                        <p class="currBids">Current Bids:   {{#each this.Bids}}<span>{{price}} , </span>{{/each}} </p>
+                        <input type="text" class="bidInput" data-serviceid="{{id}}">
+                         <button class="waves-effect waves-light btn modal-trigger bidSubmit" >Submit your bid</button>
+                 
                     </div>
                 </div>
             </div>

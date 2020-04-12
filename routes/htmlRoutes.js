@@ -39,9 +39,9 @@ module.exports = function(app) {
   });
 
   app.get("/services", function(req, res) {
-    db.Service.findAll({}).then(function(data) {
+    db.Service.findAll({ include: [db.Bid] }).then(function(data) {
       const hbData = data.map(function(data) {
-        return data.dataValues;
+        return JSON.parse(JSON.stringify(data));
       });
       res.render("services", { services: hbData });
     });
