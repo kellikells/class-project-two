@@ -47,7 +47,6 @@ module.exports = function(app) {
     });
   });
 
-//added edit service
   app.get("/editservice/:serviceId", function(req, res) {
     if (req.params.serviceId) {
       // Display the JSON for ONLY that character.
@@ -62,7 +61,6 @@ module.exports = function(app) {
       });
     }
   });
-  
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
