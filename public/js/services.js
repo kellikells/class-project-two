@@ -11,8 +11,14 @@ $(document).ready(function() {
           .eq(0)
           .attr("href", `/editservice/${serviceId}`);
         $(this)
-          .find(".editService")
+          .find(".removeService")
           .eq(0)
+          .attr("data-serviceid", serviceId);
+        $(this)
+          .find(".editService")
+          .css("display", "block");
+        $(this)
+          .find(".removeService")
           .css("display", "block");
       }
     }
@@ -20,6 +26,7 @@ $(document).ready(function() {
 });
 
 let $submitBtn = $(".bidSubmit");
+let $removeService = $(".removeService");
 
 var API = {
   saveBid: function(newBid) {
@@ -31,11 +38,24 @@ var API = {
       url: "api/newBid",
       data: JSON.stringify(newBid)
     });
+  },
+  removeService: function(id) {
+    return $.ajax({
+      type: "DELETE",
+      url: "api/deleteService/" + id
+    });
   }
 };
 
 $submitBtn.on("click", function(event) {
   event.preventDefault();
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user || user === null) {
+    alert("You should first login!");
+    window.location.href = "/signin";
+    return;
+  }
 
   var newBid = {
     price: $(this)
@@ -53,6 +73,14 @@ $submitBtn.on("click", function(event) {
 
   API.saveBid(newBid).then(function() {
     console.log("new bid saved");
+    location.reload();
+  });
+});
+
+$removeService.on("click", function() {
+  let id = $(this).data("serviceid");
+  API.removeService(id).then(function() {
+    console.log("deleted" + id);
     location.reload();
   });
 });

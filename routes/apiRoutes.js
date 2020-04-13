@@ -31,6 +31,18 @@ module.exports = function(app) {
     req.user = decoded;
     next();
   };*/
+  //Delete a Service
+  app.delete("/api/deleteService/:id", function(req, res) {
+    console.log(req.params.id);
+    db.Service.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(() => {
+      return res.json(true);
+    });
+  });
+
   //Create a new Bid
   app.post("/api/newBid", function(req, res, next) {
     db.Bid.create(req.body)

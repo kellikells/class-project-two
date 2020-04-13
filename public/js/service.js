@@ -30,11 +30,19 @@ var API = {
 const handleFormSubmit = function(event) {
   event.preventDefault();
 
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user || user === null) {
+    alert("You should first login!");
+    window.location.href = "/signin";
+    return;
+  }
+
   var newService = {
     title: $title.val().trim(),
     description: $description.val().trim(),
     price: $price.val().trim(),
-    UserId: JSON.parse(localStorage.getItem("user")).id
+    UserId: user.id
   };
 
   if (!(newService.title && newService.description && newService.price)) {
@@ -43,7 +51,8 @@ const handleFormSubmit = function(event) {
   }
 
   API.saveService(newService).then(function() {
-    console.log("new service saved", UserId);
+    //console.log("new service saved", UserId);
+    window.location.href = "/services";
   });
 };
 
