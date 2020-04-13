@@ -85,3 +85,7 @@ nav .brand-logo{
 .card-header h5{
   margin: 0px;
 }
+
+.mainContainer{
+  height: 100%;
+}
