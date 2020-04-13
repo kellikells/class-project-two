@@ -12,7 +12,6 @@ main {
 }
     
 .page-footer{
-position: fixed;
     bottom: 0px;
     width: 100%;
 }
@@ -65,7 +64,7 @@ nav .brand-logo{
 }
 
 .card-action {
-  height: 50px;
+  height: 180px;
 }
 
 .card-action h5{

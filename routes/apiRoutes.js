@@ -31,6 +31,20 @@ module.exports = function(app) {
     req.user = decoded;
     next();
   };*/
+  //Create a new Bid
+  app.post("/api/newBid", function(req, res, next) {
+    db.Bid.create(req.body)
+      .then(() => {
+        return res.send(true);
+      })
+      .catch(() => {
+        return next({
+          status: 503,
+          message: "Error creating bid"
+        });
+      });
+  });
+
   // Create a new user api/newuser
   app.post("/api/newuser", function(req, res, next) {
     db.User.create(req.body)
