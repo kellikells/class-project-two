@@ -56,11 +56,14 @@ nav .brand-logo{
   margin-right:0px;
 }
 
-.editService{
+.editService, .removeService{
   position: absolute;
   top:0px;
-  right:5px;
+  right:30px;
   cursor: pointer;
+}
+.removeService{
+  right:5px;
 }
 
 .card-action {
@@ -74,4 +77,11 @@ nav .brand-logo{
 
 .card-content{
   padding-top: 20px;
+}
+.card-header{
+  padding: 20px;
+  margin-bottom: 25px;
+}
+.card-header h5{
+  margin: 0px;
 }

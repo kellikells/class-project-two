@@ -13,6 +13,7 @@ $(document).on("click", "#logout", function() {
   localStorage.removeItem("user");
   $("#signupDrp a").text("Sign up");
   $("#signinDrp").html("<a href='/signin'>Sign in</a>");
+  location.reload();
 });
 /*
 var $exampleText = $("#example-text");
