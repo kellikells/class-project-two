@@ -1,12 +1,12 @@
-<div class="container mainContainer">
+<div class="container mainContainer" id="signInPage">
 
   <div class="row">
     <div class="col s12">
     <div class="card">
-      <div class="card-header teal light-green white-text" id="login">
+      <div class="card-header" id="login">
         <h5>Login</h5>
       </div>
-      <div class="catd-content">
+      <div class="card-content">
         <div class="row">
           <div class="input-field col s12">
             <input id="email" type="email" class="validate">
@@ -21,8 +21,12 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <button class="waves-effect waves-light btn modal-trigger" type="submit" name="action" id="signin"
-              href="#modal1">Submit</button>
+            <button class="waves-effect waves-light btn modal-trigger" type="submit" name="action" id="signin">Sign In</button>
+            <div id="betweenLine">
+            <hr>
+            <p>or</p>
+            </div>
+            <a class="waves-effect waves-light btn modal-trigger" href="./signup" id="signup">Sign UP</a>
           </div>
         </div>
       </div>

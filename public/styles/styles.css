@@ -97,3 +97,34 @@ nav .brand-logo{
   width:179px;
   height:65px;
 }
+
+#signin, #signup{
+  width:100%;
+}
+
+#signInPage .card{
+  text-align: center;
+}
+#signInPage .card-content{
+  max-width: 60%;
+  margin: auto;
+}
+
+#signInPage .card-header{
+  border-bottom: 1px solid #ccc;
+}
+
+#betweenLine{
+  position: relative;
+}
+#signInPage hr{
+  color:#ccc;
+  margin: 20px 0px;
+}
+#betweenLine p{
+  position: absolute;
+  top: -14px;
+  right: 47%;
+  background-color: #fff;
+  padding: 0px 5px;
+}
