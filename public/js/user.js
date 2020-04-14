@@ -39,7 +39,7 @@ const handleFormSubmit = function(event) {
     return;
   }
   API.saveUser(newUser).then(function() {
-    console.log("new user saved");
+    window.location.href = "/signin";
   });
 };
 

@@ -89,3 +89,11 @@ nav .brand-logo{
 .mainContainer{
   height: 100%;
 }
+
+.brand-logo {
+  background-image: url(../images/logo-eservices.png);
+  background-repeat: no-repeat;
+  background-size: 179px 65px;
+  width:179px;
+  height:65px;
+}

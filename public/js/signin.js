@@ -35,11 +35,10 @@ const handleSigninProcess = function() {
       );
       $("#signupDrp a").text("Edit Profile");
       $("#signinDrp").html("<a id='logout'>Logout</a>");
+      $(".modal").modal();
     }
   });
 };
-$(document).ready(function() {
-  $(".modal").modal();
-});
+//$(document).ready(function() {});
 
 $submitBtn.on("click", handleSigninProcess);
