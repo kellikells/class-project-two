@@ -10,7 +10,10 @@ var API = {
       },
       type: "POST",
       url: "api/signin",
-      data: JSON.stringify(newUser)
+      data: JSON.stringify(newUser),
+      error: function showError() {
+        alert("wrong username or password!");
+      }
     });
   }
 };
@@ -35,10 +38,12 @@ const handleSigninProcess = function() {
       );
       $("#signupDrp a").text("Edit Profile");
       $("#signinDrp").html("<a id='logout'>Logout</a>");
-      $(".modal").modal();
+      window.location.href = "/services";
     }
   });
 };
-//$(document).ready(function() {});
+$(document).ready(function() {
+  // $(".modal").modal();
+});
 
 $submitBtn.on("click", handleSigninProcess);
