@@ -33,18 +33,27 @@
 =============================================================
 
 
- ### Screenshots:
+## Screenshots:
 
-Javascript code put into MySQL Workbench:
+# Homepage:
+
 ![initial load](/README/homepage.jpg)
 --------------------------------------------------------------
+# Signup Page:
 
+![signup](/README/signupPage.jpg)
 --------------------------------------------------------------
+# Login Page:
 
+![login](/README/loginPage.jpg)
 --------------------------------------------------------------
+# Login required to proceed:
 
+![login required](/README/loginRequired.jpg)
 --------------------------------------------------------------
+# Submit Service form:
 
+![submit service](/README/submitService.jpg)
 --------------------------------------------------------------
 
 --------------------------------------------------------------
